@@ -1,0 +1,19 @@
+Host home
+	HostName 192.168.0.110
+	User root
+
+Host work
+	HostName 10.104.82.188
+	Port 22
+	User dabao
+	ProxyCommand ssh -o "ControlMaster=no" home nc -q 1 -w 30 %h %p
+	ServerAliveInterval 60
+	ServerAliveCountMax 10
+
+Host inc
+	HostName 172.28.209.32
+	Port 22
+	User root
+	ProxyCommand ssh -o "ControlMaster=no" home nc -q 1 -w 30 %h %p
+	ServerAliveInterval 60
+	ServerAliveCountMax 10
