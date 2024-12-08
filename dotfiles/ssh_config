@@ -1,3 +1,8 @@
+Host *
+	ServerAliveInterval 10
+	HostKeyAlgorithms +ssh-rsa
+	PubkeyAcceptedKeyTypes +ssh-rsa
+
 Host home
 	HostName 192.168.0.110
 	User root
@@ -10,10 +15,418 @@ Host work
 	ServerAliveInterval 60
 	ServerAliveCountMax 10
 
-Host inc
+Host inc_remote
 	HostName 172.28.209.32
 	Port 22
 	User root
 	ProxyCommand ssh -o "ControlMaster=no" home nc -q 1 -w 30 %h %p
 	ServerAliveInterval 60
 	ServerAliveCountMax 10
+
+Host home_remote
+	HostName oubl.top
+	Port 2222
+	User root
+
+Host work1
+    HostName 10.104.82.188
+    User dabao
+	ProxyCommand ssh -W %h:%p home
+
+Host vpn1
+	HostName 172.16.160.141
+	User Administrator
+Host vpn2
+	HostName 10.109.16.129
+	#User Administrator
+	User root
+Host inc
+	HostName 172.28.209.32
+	User root
+Host test01
+	HostName 172.28.207.40
+	User root
+Host test02
+	HostName 172.28.207.41
+	User root
+Host test03
+	HostName 172.28.207.42
+	User root
+Host sdwan114
+	HostName 172.29.102.114
+	User ruijie
+Host sdwan90
+	HostName 172.29.102.90
+	User ruijie
+Host router-171
+	HostName 172.28.20.171
+	User ruijie
+Host router-172
+	HostName 172.28.20.172
+	User ruijie
+Host test-124
+	HostName 10.110.246.124
+	User root
+Host access1
+	HostName 172.28.14.113
+	User admin
+Host access2
+	HostName 172.28.14.172
+	User admin
+Host access3
+	HostName 172.28.14.111
+	User admin
+Host access4
+	HostName 172.28.14.173
+	User admin
+Host 195
+	HostName 172.29.101.195
+	User root
+Host test1
+	HostName 10.110.245.178
+	User root
+Host test2
+	HostName 10.110.245.37
+	User root
+Host test3
+	HostName 10.110.247.179
+	User root
+Host wis1
+	HostName 10.110.71.169
+	User root
+Host wis2
+	HostName 10.110.71.183
+	User root
+Host wis3
+	HostName 10.110.71.236
+	User root
+Host 191
+	HostName 172.28.202.191
+	User root
+Host t81
+	HostName 172.29.130.81
+	User root
+Host t82
+	HostName 172.29.130.82
+	User root
+Host t83
+	HostName 172.29.130.83
+	User root
+Host 183
+	HostName 10.110.71.183
+	User root
+Host 53
+	Hostname 172.28.36.53
+	User root
+	#!! Password root@2013
+Host 254
+	Hostname 10.110.75.254
+	User root
+Host dhcp1
+	Hostname 172.27.127.211
+	User root
+Host dhcp2
+	Hostname 172.27.127.212
+	User root
+Host dhcp3
+	Hostname 172.27.127.213
+	User root
+Host wan
+	Hostname 10.110.75.48
+	User root
+Host odl1
+	Hostname 10.110.245.1
+	User root
+Host odl2
+	HostName 10.110.245.79
+	User root
+host odl3
+	hostname 10.110.246.63
+
+host dh1
+	hostname 172.29.115.210
+	User root
+	Port 2022
+host o1
+	hostname 172.28.203.231
+	User root
+host o2
+	hostname 172.28.203.232
+	User root
+host o4
+	hostname 172.28.203.183
+	User root
+host o3
+	hostname 172.28.203.233
+	User root
+host cxd1
+	hostname 172.28.36.54
+	User root
+host unc
+	hostname 10.110.20.123
+	User root
+Host dt1
+	hostname 10.110.20.161
+	User ruijie
+	#!! Password Test@6666
+Host dt2
+	hostname 10.110.20.170
+	User ruijie
+	#!! Password Test@6666
+Host dt3
+	hostname 10.110.20.171
+	User ruijie
+	#!! Password Test@6666
+Host dt4
+	hostname 10.110.20.169
+	User ruijie
+	#!! Password Test@6666
+Host dt5
+	hostname 10.104.253.119
+	User Ruijie123
+	#!! Password Test@6666
+Host dt6
+	hostname 10.110.20.167
+	User Ruijie123
+	#!! Password Test@6666
+Host 830
+	hostname 172.28.36.148
+	User Ruijie123
+	#!! Password Rgsdn@66
+Host 20xa
+	hostname 172.28.36.188
+	User Ruijie123
+	#!! Password Rgsdn@66
+Host 830-146
+	hostname 172.28.36.146
+	User Ruijie123
+	#!! Password Rgsdn@66
+Host router-120
+	hostname 172.28.204.20
+	User Ruijie123
+	#!! Password Rgsdn@66
+Host ai
+	hostname 10.96.33.251
+	User aiteam
+	#!! Password aiteam@2024;
+Host dump
+	hostname 10.96.33.252
+	User root
+	#!! Password ruijie
+	ProxyCommand ssh -o "ControlMaster=no" ai nc -q 1 -w 30 %h %p
+
+Host wan01
+	hostname 10.110.189.155
+	User root
+	#!! Password Ruijie@123
+Host wan02
+	hostname 10.110.189.156
+	User root
+	#!! Password Ruijie@123
+Host wan03
+	hostname 10.110.189.157
+	User root
+	#!! Password Ruijie@123
+Host wd20
+	hostname 172.28.204.20
+	User Ruijie123
+	#!! Password Rgsdn@66
+Host wd100
+	hostname 172.28.207.100
+	User Ruijie123
+	#!! Password Rgsdn@66
+Host wd132
+	hostname 10.104.236.132
+	User Ruijie123
+	#!! Password Rgsdn@66
+Host dfx1
+	hostname 172.28.203.165
+	User root
+	#!! Password ruijie@123
+Host dfx2
+	hostname 172.28.203.166
+	User root
+	#!! Password ruijie@123
+Host dfx3
+	hostname 172.28.203.167
+	User root
+	#!! Password ruijie@123
+Host ac
+	hostname 10.104.215.58
+	User admin
+	#!! Password Rgsdn@66
+Host ac1
+	hostname 172.27.54.231
+	User ruijie
+	#!! Password ruijie@123
+Host xx1
+	hostname 172.28.14.236
+	User root
+	#!! Password Rgsdn@2013
+Host xx2
+	hostname 172.28.14.238
+	User root
+	#!! Password Rgsdn@2013
+Host xx3
+	hostname 172.28.14.239
+	User root
+	#!! Password Rgsdn@2013
+Host jh1
+	hostname 172.28.14.152
+	User root
+	#!! Password Rgsdn@2013
+Host jh2
+	hostname 172.28.14.153
+	User root
+	#!! Password Rgsdn@2013
+Host jh3
+	hostname 172.28.14.154
+	User root
+	#!! Password Rgsdn@2013
+Host zhang1
+	hostname 172.28.14.152
+	User root
+	#!! Password Rgsdn@2013
+Host zhang2
+	hostname 172.28.14.153
+	User root
+	#!! Password Rgsdn@2013
+Host zhang3
+	hostname 172.28.14.154
+	User root
+	#!! Password Rgsdn@2013
+Host xh1
+	hostname 172.29.102.21
+	User root
+	#!! Password rUIJIE@123
+Host xh2
+	hostname 172.29.102.22
+	User root
+	#!! Password rUIJIE@123
+Host xh3
+	hostname 172.29.102.23
+	User root
+	#!! Password rUIJIE@123
+Host yq1
+	hostname 172.29.102.191
+	User root
+	Port 2222
+	#!! Password wuxian@2022
+Host yq2
+	hostname 172.29.102.191
+	User root
+	Port 2022
+	#!! Password wuxian@2022
+Host yq3
+	hostname 172.29.102.191
+	User root
+	Port 2122
+	#!! Password wuxian@2022
+Host jz
+	hostname 172.29.127.101
+	User root
+Host zp1
+	hostname 172.29.105.198
+	User root
+	Port 20101
+	#!! Password Ruijie@123
+Host zp2
+	hostname 172.29.105.198
+	User root
+	Port 20102
+	#!! Password Ruijie@123
+Host zp3
+	hostname 172.29.105.198
+	User root
+	Port 20103
+	#!! Password Ruijie@123
+Host jh11
+	hostname 172.17.126.251
+	User root
+	#!! Password Root@123
+Host jh12
+	hostname 172.17.126.252
+	User root
+	#!! Password Root@123
+Host jh13
+	hostname 172.17.126.253
+	User root
+	#!! Password Root@123
+Host zz1
+	hostname 172.27.76.26
+	User root
+	#!! Password ruijie@123
+Host zz2
+	hostname 172.27.76.27
+	User root
+	#!! Password ruijie@123
+Host zz3
+	hostname 172.27.76.28
+	User root
+	#!! Password ruijie@123
+Host 24
+	hostname 172.27.54.24
+	User test
+	#!! Password ruijie@123
+
+Host zp11
+	hostname 172.29.101.171
+	User root
+	#!! Password Quan@123
+
+Host zp22
+	hostname 172.29.101.172
+	User root
+	#!! Password Quan@123
+Host zp33
+	hostname 172.29.101.173
+	User root
+	#!! Password Quan@123
+Host sf1
+	hostname 172.29.101.40
+	User root
+	#!! Password rootC2013
+Host sf2
+	hostname 172.29.101.41
+	User root
+	#!! Password rootC2013
+Host sf3
+	hostname 172.29.101.42
+	User root
+	#!! Password rootC2013
+Host lx1
+	hostname 172.29.102.21
+	User root
+	#!! Password rUIJIE@123
+Host lx2
+	hostname 172.29.102.22
+	User root
+	#!! Password rUIJIE@123
+Host lx3
+	hostname 172.29.102.23
+	User root
+	#!! Password rUIJIE@123
+Host lite
+	hostname 172.28.169.91
+	User root
+	#!! Password ruijie@123
+Host zlg1
+	hostname 172.27.55.161
+	User ruijie
+	#!! Password Sdwan@123
+Host zlg2
+	hostname 172.27.55.180
+	User ruijie
+	#!! Password Sdwan@123
+Host zlg3
+	hostname 172.27.55.159
+	User ruijie
+	#!! Password Sdwan@123
+Host lite1
+	hostname 172.28.205.42
+	User root
+	#!! Password ruijie
+Host lite2
+	hostname 172.28.205.43
+	User root
+	#!! Password ruijie
