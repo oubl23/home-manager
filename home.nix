@@ -1,7 +1,12 @@
 { config, pkgs, ... }:
 
 {
-
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
+  };
   home.username = "dabao";
   home.homeDirectory = "/home/dabao";
 
@@ -19,6 +24,9 @@
     subversion
     pgcli
     tmuxinator
+    vscode
+    dbeaver-bin
+    jetbrains.idea-community
   ];
 
   home.file = {
@@ -33,4 +41,6 @@
 
   programs.home-manager.enable = true;
 
+  xdg.enable = true;
+  xdg.dataHome = /home/dabao/.local/share;
 }
