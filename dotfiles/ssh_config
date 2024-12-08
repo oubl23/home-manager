@@ -4,7 +4,8 @@ Host *
 	PubkeyAcceptedKeyTypes +ssh-rsa
 
 Host home
-	HostName 192.168.0.110
+	HostName oubl.top
+	Port 2222
 	User root
 
 Host work

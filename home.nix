@@ -27,11 +27,16 @@
     vscode
     dbeaver-bin
     jetbrains.idea-community
+    redis
+    kafkactl
   ];
 
   home.file = {
-    ".ssh/config".source = dotfiles/ssh_config;
+    ".ssl".source = dotfiles/ssl;
+    ".config/kafkactl/.config.yml".source = dotfiles/kafkactl;
+    ".custom.zsh".source = dotfiles/custom.zsh;
     ".config/alacritty/alacritty.toml".text = import config/alacritty.nix {zsh = pkgs.zsh;};
+    ".ssh/config".source = dotfiles/ssh_config;
   };
 
 

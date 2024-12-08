@@ -1,0 +1,20 @@
+contexts:
+    32:
+        brokers:
+            - 172.28.209.32:9093
+        tls:
+            enabled: true
+            ca: /home/dabao/.ssl/CARoot.pem
+            cert: /home/dabao/.ssl/certificate.pem
+            certKey: /home/dabao/.ssl/key.pem
+            insecure: true
+    123:
+        brokers:
+            - 10.110.20.123:9093
+        tls:
+            enabled: true
+            ca: /home/dabao/.ssl/CARoot.pem
+            cert: /home/dabao/.ssl/certificate.pem
+            certKey: /home/dabao/.ssl/key.pem
+            insecure: true
+current-context: 32

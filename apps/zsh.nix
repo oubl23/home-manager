@@ -7,6 +7,7 @@
             set -o emacs
             . /home/dabao/.nix-profile/etc/profile.d/nix.sh
             [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+            [[ ! -f ~/.custom.zsh ]] || source ~/.custom.zsh
         '';
         shellAliases = {
             ll = "ls -l";
