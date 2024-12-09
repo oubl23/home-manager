@@ -8,6 +8,8 @@ substituters = https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store https://c
 EOF
 
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
-git clone https://github.com/oubl23/home-manager.git .config/home-manager
+git clone https://github.com/oubl23/home-manager.git ~/.config/home-manager
+
+cp ~/.config/home-manager/config-nix.toml .config-nix.toml
 nix run home-manager/master -- switch
 ```

@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, userConfig, ... }:
 {
   nixpkgs = {
     config = {
@@ -34,7 +33,7 @@
   home.file = {
     ".ssl".source = dotfiles/ssl;
     ".config/kafkactl/.config.yml".source = dotfiles/kafkactl;
-    ".custom.zsh".source = dotfiles/custom.zsh;
+    ".custom.zsh".text = import config/custom.zsh.nix {proxy = userConfig.proxy.server;};
     ".config/alacritty/alacritty.toml".text = import config/alacritty.nix {zsh = pkgs.zsh;};
     ".ssh/config".source = dotfiles/ssh_config;
   };

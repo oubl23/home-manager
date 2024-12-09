@@ -1,6 +1,7 @@
+{ proxy }:''
 function sp () {
-	export https_proxy=ip:7890
-	export http_proxy=ip:7890
+	export https_proxy=${proxy}
+	export http_proxy=${proxy}
 }
 
 function np () {
@@ -26,3 +27,4 @@ function kp(){
 	#kafkactl produce $2 --separator=# --file=message
 	kafkactl produce $2 --file=message
 }
+''

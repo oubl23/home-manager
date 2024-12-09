@@ -11,7 +11,7 @@
         '';
         shellAliases = {
             ll = "ls -l";
-            update = "home-manager switch";
+            update = "home-manager switch --impure";
         };
         history = {
             size = 100000;

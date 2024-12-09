@@ -431,3 +431,19 @@ Host lite2
 	hostname 172.28.205.43
 	User root
 	#!! Password ruijie
+
+
+Host compile_65
+	hostname 172.28.202.65
+	User ruijie
+	#!! Password ruijie
+
+Host compile_67
+	hostname 172.28.202.67
+	User ruijie
+	#!! Password ruijie
+
+Host compile_68
+	hostname 172.28.205.68
+	User ruijie
+	#!! Password ruijie
